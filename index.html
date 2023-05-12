@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assest/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assest/css/Style.css">
-    <link rel="stylesheet" href="/ssest/css/fonts/css/all.min.css">
+    <link rel="stylesheet" href="assest/css/fonts/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assest/css/swiper-bundle.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MyProfile</title>
 </head>
-<body>
+<body id="body">
 <header class="header">
     <a href="" class="logo">MyProfile.</a>
     <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#service">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Projects</a>
+        <a href="#contact">Assignment</a>
     </nav>
     <i class='bx bx-moon' id="darkMood-icon"></i>
 </header>
@@ -25,7 +28,7 @@
 <section class="home" id="home">
     <div class="home-content">
         <h3>Hey, I am</h3>
-        <h1>Sudeera Madushan</h1>
+        <h1 >Sudeera Madushan</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis dolores hic laboriosam maiores nemo,
             praesentium sequi similique tenetur vero. Delectus, doloremque ea exercitationem iste praesentium
             repellendus
@@ -82,29 +85,29 @@
             Deleniti, voluptates
         </p>
         <div class="tab-titles">
-            <p class="tab-links active-links">Skills</p>
-            <p class="tab-links">Experience</p>
-            <p class="tab-links">Education</p>
+            <p class="tab-links active-links tab-links-margin" id="btnSkills">Skills</p>
+            <p class="tab-links tab-links-margin" id="btnExperience">Experience</p>
+            <p class="tab-links tab-links-margin" id="btnEducation">Education</p>
         </div>
-        <div class="tab-content">
+        <div class="tab-content" id="tabContentSkills">
             <ul>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
             </ul>
         </div>
-        <div class="tab-content">
+        <div class="tab-content" id="tabContentExperience" style="display: none">
             <ul>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
+                <li><span>MY</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
             </ul>
         </div>
-        <div class="tab-content">
+        <div class="tab-content" id="tabContentEducation" style="display: none">
             <ul>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
-                <li><span>Java</span>Develop Java Applications</li>
+                <li><span>App</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
+                <li><span>Java</span><br>Develop Java Applications</li>
             </ul>
         </div>
         <a href="#" class="btn">Read More</a>
@@ -181,12 +184,204 @@
     </div>
 </section>
 
+<!--Assignment Section-->
+<h2 class="heading">My <span>Assignment</span></h2>
+<section class="assignment-content">
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+                        <div class="card-image">
+                            <img src="assest/image/glowMap.JPG" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Assignment 1</h2>
+                        <p class="description">My Profile Glow Map</p>
+
+                        <button class="btn btn-bottom">View More</button>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+
+                        <div class="card-image">
+                            <img src="assest/image/figma.JPG" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Assignment 2</h2>
+                        <p class="description">My Profile Figma Design</p>
+
+                        <button class="btn btn-bottom">View More</button>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+
+                        <div class="card-image">
+                            <img src="assest/image/website.JPG" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Assignment 3</h2>
+                        <p class="description">My Profile Website. Using HTML, CSS and JavaScript</p>
+
+                        <button class="btn btn-bottom">View More</button>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+
+                        <div class="card-image">
+                            <!--<img src="images/profile4.jpg" alt="" class="card-img">-->
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">David Dell</h2>
+                        <p class="description">The lorem text the section that contains header with having open
+                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                        <button class="btn">View More</button>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+
+                        <div class="card-image">
+                            <!--<img src="images/profile5.jpg" alt="" class="card-img">-->
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">David Dell</h2>
+                        <p class="description">The lorem text the section that contains header with having open
+                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                        <button class="btn">View More</button>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="image-content">
+                        <span class="overlay-slide"></span>
+
+                        <div class="card-image">
+                            <!--<img src="images/profile6.jpg" alt="" class="card-img">-->
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">David Dell</h2>
+                        <p class="description">The lorem text the section that contains header with having open
+                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+
+                        <button class="btn">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</section>
+<script src="lib/jquery-3.6.4.min.js"></script>
+<script src="assest/js/swiper-bundle.min.js"></script>
 <script>
+    function showSkills() {
+        $("#tabContentSkills").css("display", "inherit");
+        $("#tabContentEducation").css("display", "none");
+        $("#tabContentExperience").css("display", "none");
+        $("#btnSkills").addClass("active-links");
+        $("#btnExperience").removeClass("active-links");
+        $("#btnEducation").removeClass("active-links");
+        // $("#btnExperience").css("width","0")
+    }
+
+    function showEducation() {
+        $("#tabContentSkills").css("display", "none");
+        $("#tabContentEducation").css("display", "inherit");
+        $("#tabContentExperience").css("display", "none");
+        $("#btnSkills").removeClass("active-links");
+        $("#btnExperience").removeClass("active-links");
+        $("#btnEducation").addClass("active-links");
+    }
+
+    function showExperience() {
+        $("#tabContentSkills").css("display", "none");
+        $("#tabContentEducation").css("display", "none");
+        $("#tabContentExperience").css("display", "inherit");
+        $("#btnSkills").removeClass("active-links");
+        $("#btnExperience").addClass("active-links");
+        $("#btnEducation").removeClass("active-links");
+    }
+
+    var darkMood = true;
+
+    function darkMoodShow() {
+        if (darkMood) {
+            $("#darkMood-icon").addClass("bx-sun");
+            $("body").addClass("dark-mood")
+            darkMood = false;
+        } else {
+            $("#darkMood-icon").removeClass("bx-sun");
+            $("body").removeClass("dark-mood")
+            darkMood = true;
+        }
+    }
 
     window.onscroll = () => {
         let header = document.querySelector('.header');
         header.classList.toggle('sticky', window.scrollY > 100);
     }
+
+    $("#btnSkills").click(showSkills);
+    $("#btnEducation").click(showEducation);
+    $("#btnExperience").click(showExperience);
+    $("#darkMood-icon").click(darkMoodShow);
+
+
+    // Slider
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 3,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: 'true',
+        fade: 'true',
+        grabCursor: 'true',
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            520: {
+                slidesPerView: 2,
+            },
+            950: {
+                slidesPerView: 3,
+            },
+        },
+    });
 </script>
 </body>
 </html>
