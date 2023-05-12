@@ -274,6 +274,39 @@ span{
     font-size: 2rem;
     margin: 2rem 0 3rem;
 }
+.tab-titles{
+    display: flex;
+    margin: -40px 0 -20px 0;
+}
+.tab-titles .tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-titles .tab-links::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .5s ease;
+
+}
+.tab-content ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-content ul li span{
+    font-size: 14px;
+}
+.tab-links.active-links::after{
+    width: 100%;
+}
+
 
 .services{
     min-height: auto;
