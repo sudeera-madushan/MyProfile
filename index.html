@@ -7,13 +7,26 @@
     <link rel="stylesheet" href="assest/css/fonts/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="assest/css/swiper-bundle.min.css">
+<!--    AOS Librery-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--    Import Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="assest/css/preloader.css"/>
     <title>MyProfile</title>
 </head>
 <body id="body">
+<div class="loader-main">
+</div>
+<div class="loader">
+    <div class="inner one"></div>
+    <div class="inner two"></div>
+    <div class="inner three"></div>
+</div>
+
 <header class="header">
-    <a href="" class="logo">MyProfile.</a>
+    <a href="" class="logo ">MyProfile.</a>
     <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
@@ -66,17 +79,17 @@
     </div>
 
     <div class="home-img">
-        <img src="/assest/image/my2.png" alt="myImage">
+        <img src="assest/image/my2.png" alt="myImage">
     </div>
 </section>
 
 <!--About Section-->
 <section class="about" id="about">
-    <div class="about-img">
-        <img src="/assest/image/my3.png" alt="my3">
+    <div class="about-img " data-aos="fade-up-right">
+        <img src="assest/image/my3.png" alt="my3">
     </div>
-    <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
+    <div class="about-content" data-aos="fade-up-left">
+        <h2 class="heading ">About <span>Me</span></h2>
         <h3>Hi, I'm here To Help Your Next Project !</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam asperiores blanditiis
             corporis,
@@ -116,8 +129,8 @@
 
 <!--service Section-->
 <section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
-    <div class="service-container">
+    <h2 class="heading" data-aos="fade-up" data-aos-duration="1000">My <span>Services</span></h2>
+    <div class="service-container" data-aos="fade-up" data-aos-duration="1000">
         <div class="service-box">
             <i class='bx bx-code-alt'></i>
             <h3>Web Development</h3>
@@ -146,10 +159,10 @@
 </section>
 
 
-<section class="projects" id="projects">
-    <h2 class="heading">My <span>Projects</span></h2>
-    <div class="project-container">
-        <div class="project-box">
+<section class="projects" id="projects" >
+    <h2 class="heading" data-aos="fade-up" data-aos-duration="1000" >My <span>Projects</span></h2>
+    <div class="project-container" >
+        <div class="project-box" data-aos="flip-right" data-aos-duration="1000">
             <img src="assest/image/bank.JPG" alt="">
             <div class="project-layer">
                 <h4>JavaFX</h4>
@@ -157,7 +170,7 @@
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-aos="flip-right"  data-aos-duration="1500">
             <img src="assest/image/website.JPG" alt="">
             <div class="project-layer">
                 <h4>JavaFX</h4>
@@ -165,7 +178,7 @@
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-aos="flip-right"  data-aos-duration="2000">
             <img src="assest/image/vehicle.JPG" alt="">
             <div class="project-layer">
                 <h4>JavaFX</h4>
@@ -173,7 +186,7 @@
                 <a href="#"><i class='bx bx-link-external'></i></a>
             </div>
         </div>
-        <div class="project-box">
+        <div class="project-box" data-aos="flip-right"  data-aos-duration="2500">
             <img src="assest/image/lms.JPG" alt="">
             <div class="project-layer">
                 <h4>JavaFX</h4>
@@ -185,7 +198,7 @@
 </section>
 
 <!--Assignment Section-->
-<h2 class="heading">My <span>Assignment</span></h2>
+<h2 class="heading animate__animated animate__bounce animate__infinite">My <span>Assignment</span></h2>
 <section class="assignment-content">
     <div class="slide-container swiper">
         <div class="slide-content">
@@ -298,8 +311,22 @@
 
 </section>
 <script src="lib/jquery-3.6.4.min.js"></script>
+<!--Import AOS JS Lib-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!--Init AOS-->
+<script>
+    AOS.init();
+
+</script>
 <script src="assest/js/swiper-bundle.min.js"></script>
 <script>
+    $(document).ready(() => {
+        setTimeout(() => {
+            $('.loader-main').css({display : "none"});
+            $('.loader').css({display : "none"});
+        },2000);
+
+    });
     function showSkills() {
         $("#tabContentSkills").css("display", "inherit");
         $("#tabContentEducation").css("display", "none");
