@@ -77,13 +77,35 @@ body{
     left: 0;
 }
 .navbar a{
-    text-decoration: none;
-    position: relative;
-    left: 0;
+    /*text-decoration: none;*/
+    /*position: relative;*/
+    /*left: 0;*/
+    /*font-size: 1.7rem;*/
+    /*color: var(--white-color);*/
+    /*font-weight: 500;*/
+    /*margin-right: 3.5rem;*/
+}
+.my-header .navbar{
+    display: block;
+    list-style: none;
     font-size: 1.7rem;
     color: var(--white-color);
     font-weight: 500;
     margin-right: 3.5rem;
+    left: 14px;
+    top: 29rem;
+}
+.my-header .navbar li{
+    font-size: 2.8rem;
+    margin: 1rem;
+    color: darkgray;
+    cursor: pointer;
+}
+.my-header .navbar li:hover{
+    color: white;
+}
+.my-header .navbar li.active{
+    color: white;
 }
 
 .navbar a.active::before{
@@ -122,9 +144,10 @@ section{
     position: absolute;
     z-index: 0;
     top: 0;
-    width: 99vw;
-    border-left: 155px solid #023047;
-    border-top: 94px solid #0081a7;
+    right: 0;
+    width: 79vw;
+    /*border-left: 155px solid #023047;*/
+    /*border-top: 94px solid #0081a7;*/
 }
 .home-section .home-art-2{
     /*position: absolute;*/
@@ -148,21 +171,76 @@ section{
 .home-section .home-content{
     position: absolute;
     top: 216px;
-    left: 224px;
+    right: 39rem;
     max-width: 57rem;
 }
 
-.home-section .home-art{
-    top: 71px;
-    left: 8rem;
-    position: relative;
-    width: 62rem;
-    height: 54rem;
-    border-radius: 25% 75% 83% 17% / 51% 39% 68% 56%;
-    background: rgb(85,94,255);
-    background: radial-gradient(circle, rgba(85,94,255,0.8995973389355743) 0%, rgba(46,121,204,0.9444152661064426) 50%, rgba(55,118,204,0.577468487394958) 100%);
-    box-shadow: rgba(136, 165, 191, 0.48) 72px -46px 0.5px 0px, rgba(255, 255, 255, 0.8) 0 0 0 0;
+.my-header{
+    width: 20vw;
+    height: 100vh;
+    background: var(--main-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
+.my-header img{
+    width: 10vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 39px;
+    border-radius: 90px;
+    box-shadow: 0px 6px 5px #ccc;
+    border: 3px solid white;
+}
+.my-header h2{
+    position: absolute;
+    left: 36px;
+    color: var(--white-color);
+    top: 186px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 22px;
+}
+.my-header .social-media{
+    position: absolute;
+    top: 20rem;
+    left: 27px;
+}
+.my-header .social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--white-color);
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+    font-size: 2rem;
+    color: var(--white-color);
+    margin: 2.5rem 0.7rem 3rem 0;
+    text-decoration: none;
+    transition: .5s ease;
+}
+.my-header .social-media a:hover{
+    color: var(--main-color);
+    background: var(--white-color);
+}
+/*.home-section .home-art{*/
+/*    top: 71px;*/
+/*    left: 8rem;*/
+/*    position: relative;*/
+/*    width: 62rem;*/
+/*    height: 54rem;*/
+/*    border-radius: 25% 75% 83% 17% / 51% 39% 68% 56%;*/
+/*    background: rgb(85,94,255);*/
+/*    background: radial-gradient(circle, rgba(85,94,255,0.8995973389355743) 0%, rgba(46,121,204,0.9444152661064426) 50%, rgba(55,118,204,0.577468487394958) 100%);*/
+/*    box-shadow: rgba(136, 165, 191, 0.48) 72px -46px 0.5px 0px, rgba(255, 255, 255, 0.8) 0 0 0 0;*/
+/*}*/
+
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -361,9 +439,10 @@ span{
 .about{
     display: flex;
     justify-content: right;
-    align-items: center;
-    gap: 10rem;
-    margin: 80px 0 0 0;
+    align-items: end;
+    /* gap: 35rem; */
+    margin-top: 13rem;
+    margin-left: 33rem;
 }
 .about-img{
 }
@@ -375,7 +454,7 @@ span{
     text-align: center;
 }
 .about-content h2{
-    margin: 0 0 400px 0;
+    margin: 0 0 75px 0;
     text-align: left;
     line-height: 1.2;
 }
@@ -425,13 +504,17 @@ span{
 
 
 .services{
-    min-height: auto;
-    padding-bottom: 7rem;
+    position: relative;
+    width: 80vw;
+    /* justify-content: right; */
+    /* align-items: end; */
+    left: 22rem;
 }
 .services h2{
     margin-bottom: 5rem;
 }
 .services .service-container{
+    width: 73vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -471,6 +554,10 @@ span{
 }
 .projects{
     padding-bottom: 10rem;
+    width: 80vw;
+    left: 26rem;
+    position: relative;
+    margin-top: 3rem;
 }
 .projects h2{
     margin-bottom: 4rem;
@@ -548,7 +635,11 @@ span{
     /*align-items: center;*/
     /*justify-content: center;*/
     background-color: transparent;
+    width: 80vw;
+    left: 28rem;
+    position: relative;
 }
+
 .slide-container{
     max-width: 1120px;
     width: 100%;
@@ -610,11 +701,12 @@ span{
 }
 .card-image{
     position: relative;
-    height: 170px;
-    width: 300px;
+    height: 154px;
+    width: 263px;
     border-radius: 20px;
     background: #FFF;
     padding: 3px;
+    margin-left: 10px;
 }
 .card-image .card-img{
     height: 100%;
