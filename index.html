@@ -30,15 +30,16 @@
     <nav class="navbar">
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
-        <a href="#service">Services</a>
-        <a href="#contact">Projects</a>
-        <a href="#contact">Assignment</a>
-    </nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#assignment">Assignment</a>
     <i class='bx bx-moon' id="darkMood-icon"></i>
+    </nav>
+    <i class='bx bx-menu' id="menu-icon"></i>
 </header>
 
 <!--home Sectin-->
-<section class="home" id="home">
+<!--<section class="home" id="home">
     <div class="home-content">
         <h3>Hey, I am</h3>
         <h1 >Sudeera Madushan</h1>
@@ -57,19 +58,19 @@
     </div>
     <div class="profession-container">
         <div class="profession-box">
-            <div class="profession" style="--i:0;">
+            <div class="profession" style="&#45;&#45;i:0;">
                 <i class='bx bx-code-alt'></i>
                 <h3>Web Developer</h3>
             </div>
-            <div class="profession" style="--i:1;">
+            <div class="profession" style="&#45;&#45;i:1;">
                 <i class='bx bx-palette'></i>
                 <h3>Web Designer</h3>
             </div>
-            <div class="profession" style="--i:2;">
+            <div class="profession" style="&#45;&#45;i:2;">
                 <i class='bx bx-code-block'></i>
                 <h3>Fullstack Developer</h3>
             </div>
-            <div class="profession" style="--i:3;">
+            <div class="profession" style="&#45;&#45;i:3;">
                 <i class='bx bx-camera'></i>
                 <h3>Photographer</h3>
             </div>
@@ -81,12 +82,31 @@
     <div class="home-img">
         <img src="assest/image/my2.png" alt="myImage">
     </div>
+</section>-->
+
+<section class="home-section">
+    <img class="home-image" src="assest/image/myBack.jpg" alt="myBackImage">
+    <div class="home-art"></div>
+    <div class="home-content">
+        <h3>Hey, I am</h3>
+        <h1 >Sudeera Madushan</h1>
+        <p> I am a passionate and experienced software engineer with a strong background in developing innovative and efficient software solutions.</p>
+
+        <div class="social-media">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-github'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+            <a href="#"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        <a href="#" class="btn">Download Cv</a>
+    </div>
 </section>
 
 <!--About Section-->
 <section class="about" id="about">
+<!--    <h2 class="heading" data-aos="fade-up" data-aos-duration="1000">My <span>Services</span></h2>-->
     <div class="about-img " data-aos="fade-up-right">
-        <img src="assest/image/my3.png" alt="my3">
+        <img class="black-img" src="assest/image/gallery/myBlackImage.jpeg" alt="my3">
     </div>
     <div class="about-content" data-aos="fade-up-left">
         <h2 class="heading ">About <span>Me</span></h2>
@@ -198,7 +218,7 @@
 </section>
 
 <!--Assignment Section-->
-<h2 class="heading animate__animated animate__bounce animate__infinite">My <span>Assignment</span></h2>
+<h2 class="heading animate__animated animate__bounce animate__infinite" id="assignment">My <span>Assignment</span></h2>
 <section class="assignment-content">
     <div class="slide-container swiper">
         <div class="slide-content">
@@ -356,6 +376,7 @@
     }
 
     var darkMood = true;
+    var menuIcon = true;
 
     function darkMoodShow() {
         if (darkMood) {
@@ -368,6 +389,17 @@
             darkMood = true;
         }
     }
+    function menuIconClick() {
+        if (menuIcon) {
+            $("#menu-icon").addClass("bx-x");
+            $('.navbar').addClass('active')
+            menuIcon = false;
+        } else {
+            $("#menu-icon").removeClass("bx-x");
+            $('.navbar').removeClass('active')
+            menuIcon = true;
+        }
+    }
 
     window.onscroll = () => {
         let header = document.querySelector('.header');
@@ -378,6 +410,7 @@
     $("#btnEducation").click(showEducation);
     $("#btnExperience").click(showExperience);
     $("#darkMood-icon").click(darkMoodShow);
+    $("#menu-icon").click(menuIconClick);
 
 
     // Slider
