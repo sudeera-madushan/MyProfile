@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>As-3</title>
+    <style>
+        section{
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+        }
+        section>div{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 10px;
+            position: absolute;
+
+
+            animation-name: my-ani;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes my-ani {
+            0%{
+                margin-top: 0;
+                margin-left: 0;
+                transform: rotate(360deg);
+            }
+            25%{
+                margin-left: 500px;
+                margin-top: 0;
+
+            }
+            50%{
+                margin-left: 500px;
+                margin-top: 550px;
+            }
+            75%{
+                margin-left: 0px;
+                margin-top: 550px;
+                /*transform: rotate(360deg);*/
+            }
+            100%{
+                margin-top: 0;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div></div>
+</section>
+</body>
+</html>

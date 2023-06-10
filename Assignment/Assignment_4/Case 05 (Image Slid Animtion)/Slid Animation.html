@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slid</title>
+    <link rel="stylesheet" href="assect/images">
+    <style>
+        main{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+        }
+        main>section{
+            width: 1600px;
+            height: 400px;
+            border: 2px solid red;
+            display: flex;
+
+            animation-name: slider-animation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+        main>section>div{
+            width: 400px;
+            height: 400px;
+            border: 2px solid green;
+            display: flex;
+        }
+        main>section>div:nth-child(1){
+            background-image: url("../images/slide1.png");
+            background-size:cover ;
+            background-repeat:no-repeat ;
+
+        }
+        main>section>div:nth-child(2){
+            background-image: url("../images/slide2.png");
+            background-size:cover ;
+            background-repeat:no-repeat ;
+
+        }
+        main>section>div:nth-child(3){
+            background-image: url("../images/slide3.png");
+            background-size:cover ;
+            background-repeat:no-repeat ;
+
+        }
+        main>section>div:nth-child(4){
+            background-image: url("../images/slide4.png");
+            background-size:cover ;
+            background-repeat:no-repeat ;
+
+        }
+        @keyframes slider-animation {
+
+            0%,20%{
+       transform: translateX(-0%);
+            }
+            25%,45%{
+                transform: translateX(-25%);
+            }
+            50%,70%{
+                transform: translateX(-50%);
+            }
+            75%,100%{
+                transform: translateX(-75%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!--<div>
+    <img src="assect/images/slide1.png"class="i1">
+    <img src="assect/images/slide2.png"class="i1">
+    <img src="assect/images/slide3.png"class="i1">
+    <img src="assect/images/slide4.png"class="i1">
+</div>-->
+<main>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</main>
+
+
+</body>
+</html>

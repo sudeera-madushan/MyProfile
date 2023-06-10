@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Night Rider</title>
+    <style>
+        body{
+            background: #adb5bd;
+        }
+        .main-row{
+            position: absolute;
+            width: 90vw;
+            height: 40px;
+            border: 1px solid black;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+        }
+        .main-row div{
+            margin: 4px;
+            width: 8vw;
+            height: 30px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<button id="btn-start">start</button>
+<button id="btn-stop">stop</button>
+<section class="main-row">
+    <div id="left-1" class="square"></div>
+    <div id="left-2" class="square"></div>
+    <div id="left-3" class="square"></div>
+    <div id="left-4" class="square"></div>
+    <div id="left-5" class="square"></div>
+    <div id="right-1" class="square"></div>
+    <div id="right-2" class="square"></div>
+    <div id="right-3" class="square"></div>
+    <div id="right-4" class="square"></div>
+    <div id="right-5" class="square"></div>
+</section>
+<audio src="assest/knigthRider.mp3" id="audio"></audio>
+<script src="/assets/lib/jQuery/jquery-3.6.4.min.js"></script>
+<script>
+
+    //     let play=setInterval(() => {
+    //     $('#left-1').css({background: "#f94144"})
+    //     $('#left-2').css({background: "#f3722c"})
+    //     $('#left-3').css({background: "#f8961e"})
+    //     $('#left-4').css({background: "none"})
+    //     $('#left-5').css({background: "none"})
+    //     $('#right-1').css({background: "none"})
+    //     $('#right-2').css({background: "none"})
+    //     $('#right-3').css({background: "none"})
+    //     $('#right-4').css({background: "none"})
+    //     $('#right-5').css({background: "none"})
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "#0077b6"})
+    //         $('#left-3').css({background: "#0096c7"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 50)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "#0096c7"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 100)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 150)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 200)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "#4d908e"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 250)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "#4d908e"})
+    //         $('#right-4').css({background: "#577590"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 300)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "#4d908e"})
+    //         $('#right-4').css({background: "#577590"})
+    //         $('#right-5').css({background: "#277da1"})
+    //     }, 350)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "#4d908e"})
+    //         $('#right-4').css({background: "#577590"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 400)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "#4d908e"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 450)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "#43aa8b"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 500)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "none"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "#90be6d"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 550)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "none"})
+    //         $('#left-3').css({background: "#0096c7"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "#f9c74f"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 600)
+    //     setTimeout(() => {
+    //         $('#left-1').css({background: "none"})
+    //         $('#left-2').css({background: "#0077b6"})
+    //         $('#left-3').css({background: "#0096c7"})
+    //         $('#left-4').css({background: "#f9844a"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 650)
+    //     setTimeout(() => {
+    //
+    //         $('#left-1').css({background: "#f94144"})
+    //         $('#left-2').css({background: "#f3722c"})
+    //         $('#left-3').css({background: "#f8961e"})
+    //         $('#left-4').css({background: "none"})
+    //         $('#left-5').css({background: "none"})
+    //         $('#right-1').css({background: "none"})
+    //         $('#right-2').css({background: "none"})
+    //         $('#right-3').css({background: "none"})
+    //         $('#right-4').css({background: "none"})
+    //         $('#right-5').css({background: "none"})
+    //     }, 700)
+    // }, 700)
+
+let lights=$('.square');
+        let lightNumber=1;
+        let direction='LEFT';
+    let intervalMy=null
+        function updateLights(){
+            $('.square').css({background: "white"});
+            lights[lightNumber].style.background='red';
+            if (lightNumber >0 ){
+                lights[lightNumber-1].style.background='pink';
+            }
+            if (lightNumber < 9 ){
+                lights[lightNumber+1].style.background='pink';
+            }
+            if (lightNumber === 9 ){
+                direction="LEFT";
+            }
+            if (lightNumber === 0 ){
+                direction="RIGHT";
+            }
+            if (direction === "RIGHT" ){
+                lightNumber++;
+            }else {
+                lightNumber--;
+            }
+        }
+
+// let intervalMy=setInterval(updateLights,100);
+$('#btn-start').on('click',()=>{
+    clearInterval(intervalMy)
+    $('#audio')[0].play();
+    intervalMy=setInterval(updateLights,100);
+})
+$('#btn-stop').on('click',()=>{
+    $('#audio')[0].pause();
+    clearInterval(intervalMy)
+})
+</script>
+</body>
+</html>

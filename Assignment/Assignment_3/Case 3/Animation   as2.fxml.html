@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+        section{
+            /*width:200px;
+            aspect-ratio: 1/1;
+            background-color: darkgrey;*/
+            /*border: 10px solid white;
+            border-top-color: red ;
+            border-radius: 100%;*/
+
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+
+        }
+        section>h1{
+            width: max-content;
+            height: max-content;
+            color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        section::before{
+            content: "";
+            width:200px;
+            aspect-ratio: 1/1;
+            background-color: darkgrey;
+            border: 10px solid white;
+            border-top-color: red ;
+            border-radius: 100%;
+
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        section:hover::before{
+            transform: rotate(360deg);
+            transition-duration: 5s;
+
+        }
+
+
+        /*section>div{
+            width: 300px;
+            height: 300px;
+            border:  12px solid gray;
+            border-radius: 50%;
+            position: absolute;
+            border-top: red;
+
+        }*/
+        /*section>div>div{
+            width: 300px;
+            height: 300px;
+            border: 12px solid red;
+            border-radius: 50%;
+
+        }*/
+    </style>
+</head>
+<body>
+<section>
+    <h1>
+        Here
+    </h1>
+  <!--<div>
+
+  </div>-->
+</section>
+</body>
+</html>

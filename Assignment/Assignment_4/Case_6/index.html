@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body>section{
+            width: 100%;
+        }
+        .sky{
+            position: relative;
+            height: 60vh;
+            width: 100vw;
+            left: -8px;
+        }
+        .city{
+            position: absolute;
+            height: 30vh;
+            top: 210px;
+            left: 0;
+
+            animation-name: test;
+            animation-duration: 10s;
+        }
+        .city2{
+            position: absolute;
+            height: 30vh;
+            top: 210px;
+            left: 1128px;
+            animation-name: test2;
+            animation-duration: 10s;
+        }
+        .city3{
+            position: absolute;
+            height: 30vh;
+            top: 210px;
+            left: 2256px;
+            animation-name: test3;
+            animation-duration: 10s;
+        }
+        .city4{
+            position: absolute;
+            height: 30vh;
+            top: 210px;
+            left: 3384px;
+            animation-name: test4;
+            animation-duration: 10s;
+        }
+        .road{
+            /*width: 100%;*/
+            left: -8px;
+            height: 40vh;
+            position: relative;
+            animation-name: test;
+            animation-duration: 10s;
+        }
+        .car{
+            position: absolute;
+            top: 350px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            width: 400px;
+        }
+        .wheel1{
+            position: absolute;
+            top: 435px;
+            left: 508px;
+            width: 75px;
+            animation-name: wheel-animation;
+            animation-duration: 10s;
+        }
+        .wheel2{
+            position: absolute;
+            top: 435px;
+            right: 521px;
+            width: 75px;
+            animation-name: wheel-animation;
+            animation-duration: 10s;
+        }
+
+        @keyframes test {
+            from {
+                left: 0;
+            }
+            to {
+                left: -3205px;
+            }
+        }
+        @keyframes test2 {
+            from {
+                left: 1128px;;
+            }
+            to {
+                left: -2077px;
+            }
+        }
+        @keyframes test3 {
+            from {
+                left: 2256px;;
+            }
+            to {
+                left: -949px;
+            }
+        }
+        @keyframes test4 {
+            from{
+                left: 3384px;;
+            }
+            to{
+                left: 179px;
+            }
+        }
+        @keyframes wheel-animation {
+            0% {
+                transform: rotate(0deg);
+
+            }
+            100% {
+                transform: rotate(1800deg);
+            }
+            /*100% {*/
+            /*    transform: rotate(0deg);*/
+            /*}*/
+        }
+    </style>
+</head>
+<body>
+<section>
+
+<div><img class="sky" src="assest/sky.jpg" alt="assest/sky.jpg"></div>
+<div><img class="city" src="assest/city.png" alt=""></div>
+<div><img class="city2" src="assest/city.png" alt=""></div>
+<div><img class="city3" src="assest/city.png" alt=""></div>
+<div><img class="city4" src="assest/city.png" alt=""></div>
+<div><img class="road" src="assest/road.jpg" alt=""></div>
+<div><img class="car" src="assest/car.png" alt=""></div>
+<div><img class="wheel1" src="assest/wheel.png" alt=""></div>
+<div><img class="wheel2" src="assest/wheel.png" alt=""></div>
+</section>
+</body>
+</html>
