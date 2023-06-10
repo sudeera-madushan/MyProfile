@@ -299,6 +299,7 @@ section{
     font-size: 3.2rem;
     font-weight: 700;
     line-height: .3;
+    color: var(--white-color);
 }
 .home-section h1{
     font-size: 5.6rem;
@@ -736,11 +737,11 @@ span{
 .card-image{
     position: relative;
     height: 154px;
-    width: 263px;
+    width: 256px;
     border-radius: 20px;
     background: #FFF;
     padding: 3px;
-    margin-left: 10px;
+    margin-left: 3px;
 }
 .card-image .card-img{
     height: 100%;
