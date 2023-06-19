@@ -80,6 +80,82 @@ body{
     position: relative;
     left: 0;
 }
+#body>section{
+    /*display: none;*/
+}
+.pane-1{
+    width: 49.4vw;
+    position: absolute;
+    height: 100vh;
+    background: var(--bs-gray-dark);
+    z-index: 1001;
+    left: 0;
+    animation-name: pane-left;
+    animation-delay: 2s;
+    animation-duration: .5s;
+}
+.pane-2{
+    width: 49.4vw;
+    position: absolute;
+    height: 100vh;
+    background: var(--bs-gray-dark);
+    z-index: 1001;
+    right: 0;
+    animation-name: pane-left;
+    animation-delay: 2s;
+    animation-duration: .5s;
+}
+
+.pane-3{
+    margin: auto;
+    width: 1px;
+    position: absolute;
+    height: 0;
+    background: white;
+    z-index: 1002;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    animation: open-line 2s;
+}
+.pane-color{
+    position: absolute;
+    background: var(--bs-gray-dark);;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    animation-name: transparent-bgc;
+    animation-delay: 2s;
+    animation-duration: 1.5s;
+}
+.pane-display-none{
+    display: none;
+}
+@keyframes transparent-bgc {
+    from{
+        background: var(--bs-gray-dark);;
+    }
+    to{
+        background: transparent;
+    }
+}
+@keyframes open-line {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100vh;
+    }
+}
+@keyframes pane-left {
+    from{
+        width: 49.4vw;
+    }
+    to{
+        width: 0;
+    }
+}
 .navbar a{
     /*text-decoration: none;*/
     /*position: relative;*/
@@ -91,7 +167,6 @@ body{
 }
 .my-header .navbar{
     display: block;
-    list-style: none;
     font-size: 1.7rem;
     color: var(--white-color);
     font-weight: 500;
@@ -99,17 +174,22 @@ body{
     left: 14px;
     top: 29rem;
 }
-.my-header .navbar li{
+.my-header .navbar a{
     font-size: 2.8rem;
     margin: 1rem;
     color: darkgray;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
 }
-.my-header .navbar li:hover{
+.my-header .navbar a:hover{
     color: white;
 }
-.my-header .navbar li.active{
-    color: white;
+/*.my-header .navbar a.active{*/
+/*    color: red;*/
+/*}*/
+.my-header .navbar a.active::before{
+    color: blue;
 }
 .home-content h1 {
     font-family: "Titillium Web", sans-serif;
@@ -149,6 +229,9 @@ body{
     background: var(--white-color);
 }
 #darkMood-icon{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
     font-size: 2.4rem;
     color: var(--white-color);
     cursor: pointer;
@@ -160,7 +243,7 @@ body{
     cursor: pointer;
 }
 section{
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     padding: 10rem 7% 2rem;
 
 }
@@ -217,6 +300,7 @@ section{
     top: 0;
     left: 0;
     z-index: 100;
+    padding: 0;
 }
 .my-header img{
     width: 10vw;
@@ -465,21 +549,19 @@ section{
     right: -20rem;
     width: 65%;
     pointer-events: none;
-
     animation: image-in 2s cubic-bezier(0.5, 0, 0.1, 1) 5s forwards;
 }
 span{
     color: var(--main-color);
 }
 .about{
+    padding-top: 61rem;
     display: flex;
     justify-content: right;
     align-items: end;
     /* gap: 35rem; */
     margin-top: 13rem;
     margin-left: 33rem;
-}
-.about-img{
 }
 .black-img{
     width: 40rem;
@@ -736,12 +818,12 @@ span{
 }
 .card-image{
     position: relative;
-    height: 154px;
-    width: 256px;
-    border-radius: 20px;
-    background: #FFF;
-    padding: 3px;
-    margin-left: 3px;
+    height: 10vw;
+    width: 18vw;
+    border-radius: 19px;
+    background: var(--bs-gray-200);
+    padding: 5px;
+    margin-left: 0px;
 }
 .card-image .card-img{
     height: 100%;
@@ -803,26 +885,26 @@ span{
 .swiper-pagination-bullet-active{
     /*background-color: #4070F4;*/
 }
-@media screen and (max-width: 768px) {
-    .slide-content{
-        margin: 0 10px;
-    }
-    .swiper-navBtn{
-        display: none;
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+/*    .slide-content{*/
+/*        margin: 0 10px;*/
+/*    }*/
+/*    .swiper-navBtn{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
 
 /*--------------------------*/
 
-@keyframes image-in {
-    from {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-    to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-}
+/*@keyframes image-in {*/
+/*    from {*/
+/*        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);*/
+/*    }*/
+/*    to {*/
+/*        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
+/*    }*/
+/*}*/
 
 /*Breakpoint*/
 @media (max-width: 1200px) {
