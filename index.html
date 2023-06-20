@@ -30,6 +30,7 @@
 <div class="pane-2"></div>
 <div class="pane-3"></div>
 <div class="pane-color"></div>
+<i id="meny-btn" class='bx bx-menu'></i>
 <section class="my-header">
     <li class='bx bx-moon' id="darkMood-icon"></li>
     <img src="assest/image/gallery/myBlackImage%20(2).jpeg" alt="">
@@ -400,10 +401,22 @@
     setTimeout(function() {
         $('.pane-color').addClass('pane-display-none')
     }, 3100);
-    // setTimeout(function() {
-    //     $('.pane-1').css({display: 'none'})
-    //     $('section').css()
-    // }, 3000);
+    let menu=true;
+    $('#meny-btn').click((event), function (){
+        if (menu) {
+            console.log(menu)
+            menu=false;
+            $('.my-header').removeClass('my-header-close');
+            $('.my-header').addClass('my-header-open');
+            $('.my-header').css({left:0});
+        }else {
+            console.log(menu)
+            menu=true;
+            $('.my-header').removeClass('my-header-open');
+            $('.my-header').addClass('my-header-close');
+            $('.my-header').css({left:'-28rem'});
+        }
+    });
 </script>
 </body>
 </html>
