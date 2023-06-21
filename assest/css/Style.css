@@ -1247,7 +1247,7 @@ hr {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 1080px) {
     .my-header{
         top: 0;
         bottom: 0;
