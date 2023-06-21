@@ -33,6 +33,7 @@ html{
     overflow-x: hidden;
 }
 body{
+    overflow: hidden;
     background: var(--bg-color);
     color: var(--text-color);
 }
@@ -649,7 +650,7 @@ span{
     border-radius: 19px;
     background: var(--bs-gray-200);
     padding: 5px;
-    margin-left: 0px;
+    margin-left: 0;
 }
 .card-image .card-img{
     height: 100%;
@@ -910,9 +911,9 @@ span{
             width: 100%;
             padding: 1rem 3%;
             background: var(--bg-color);
-            border-top: .1rem solid rgba(0,0,0,.2);
-            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-            transition: 3s;
+            /*border-top: .1rem solid rgba(0,0,0,.2);*/
+            /*box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);*/
+            /*transition: 3s;*/
         }
 
         .navbar.active{
