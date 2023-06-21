@@ -1247,12 +1247,7 @@ hr {
     }
 }
 
-@media screen and (max-width: 410px) {
-    .send-button {
-        width: 99%;
-    }
-}
-@media (max-width: 320px) {
+@media (max-width: 520px) {
     .my-header{
         top: 0;
         bottom: 0;
