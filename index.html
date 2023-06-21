@@ -51,6 +51,9 @@
     </ul>
 </section>
 <section class="home-section" id="home">
+    <div class="image-pane">
+        <div class="image-pane-content"></div>
+    </div>
     <img class="home-image" src="assest/image/myBack.jpg" alt="myBackImage" >
 
     <div class="home-content">
@@ -62,9 +65,9 @@
 </section>
 
 <!--About Section-->
-<section class="about" id="about">
+<section class="about" >
     <div class="about-content" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="heading " data-aos="fade-up" data-aos-duration="1000">About <span>Me</span></h2>
+        <h2 class="heading " data-aos="fade-up" data-aos-duration="1000" id="about">About <span>Me</span></h2>
         <h3 data-aos="fade-up" data-aos-duration="1000">Hi, I'm here To Help Your Next Project !</h3>
         <p data-aos="fade-up" data-aos-duration="1000"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam asperiores blanditiis
             corporis,
@@ -172,9 +175,10 @@
     </div>
 </section>
 
+
 <!--Assignment Section-->
 <section class="assignment-content" data-aos="fade-up" data-aos-duration="1500">
-<h2 class="heading" data-aos="fade-up" data-aos-duration="1000" id="assignment" >My <span>Assignment</span></h2>
+<h2 class="heading my-heading-as" data-aos="fade-up" data-aos-duration="1000" id="assignment" >My <span>Assignment</span></h2>
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
@@ -280,6 +284,78 @@
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
     </div>
+</section>
+
+
+<section id="contact">
+
+    <h2 class="heading" data-aos="fade-up" data-aos-duration="1000">Contact <span>Me</span></h2>
+
+    <div class="contact-wrapper">
+
+        <!-- Left contact page -->
+
+        <form id="contact-form" class="form-horizontal" role="form">
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+                </div>
+            </div>
+
+            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                <div class="alt-send-button">
+                    <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+                </div>
+
+            </button>
+
+        </form>
+
+        <!-- Left contact page -->
+
+        <div class="direct-contact-container">
+
+            <ul class="contact-list">
+                <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Colombo, Panadura</span></i></li>
+
+                <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(+94)76 478 6503</a></span></i></li>
+
+                <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">sudeeramadushan888@gmail.com</a></span></i></li>
+
+            </ul>
+
+            <hr>
+            <ul class="social-media-list">
+                <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-github" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-codepen" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="#" target="_blank" class="contact-icon">
+                    <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+            <hr>
+
+            <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+
+        </div>
+
+    </div>
+
 </section>
 <script src="lib/jquery-3.6.4.min.js"></script>
 <!--Import AOS JS Lib-->
@@ -401,22 +477,45 @@
     setTimeout(function() {
         $('.pane-color').addClass('pane-display-none')
     }, 3100);
-    let menu=true;
     $('#meny-btn').click((event), function (){
-        if (menu) {
-            console.log(menu)
-            menu=false;
+        console.log($('.my-header').css('left'))
+        if ( $('.my-header').css('left')<'0px') {
             $('.my-header').removeClass('my-header-close');
             $('.my-header').addClass('my-header-open');
             $('.my-header').css({left:0});
-        }else {
-            console.log(menu)
-            menu=true;
+        }
+        if( $('.my-header').css('left')==='0px'){
             $('.my-header').removeClass('my-header-open');
             $('.my-header').addClass('my-header-close');
             $('.my-header').css({left:'-28rem'});
         }
     });
+    $(window).on('resize', function() {
+        let width=$(window).width()
+        if (width>974){
+            $('.my-header').css({left:'0'});
+            $('#meny-btn').css({display:'none'})
+        }else {
+            $('.my-header').css({left:'-28rem'});
+            $('#meny-btn').css({display:'inherit'})
+        }
+    });
+    function showMenuBtn(){
+        let width=$(window).width()
+        if (width>974){
+            $('#meny-btn').css({display:'none'})
+        }else {
+            $('#meny-btn').css({display:'inherit'})
+        }
+    }
+    document.querySelector('#contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        e.target.elements.name.value = '';
+        e.target.elements.email.value = '';
+        e.target.elements.message.value = '';
+    });
+
+    showMenuBtn();
 </script>
 </body>
 </html>
