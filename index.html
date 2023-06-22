@@ -246,7 +246,9 @@
                         <h2 class="name">Assignment 11</h2>
                         <p class="description">My POS System. Using HTML, CSS and JavaScript</p>
 
-                        <a href="https://sudeera-madushan.github.io/Assignment_6/"><button class="btn">View More</button></a>
+                        <a href="https://sudeera-madushan.github.io/Assignment_6/">
+                            <button class="btn btn-bottom">View More</button>
+                        </a>
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -262,7 +264,9 @@
                         <h2 class="name">Assignment 10</h2>
                         <p class="description">The lorem text the section that contains header with having open</p>
 
-                        <a href="https://sudeera-madushan.github.io/calculator/"><button class="btn">View More</button></a>
+                        <a href="https://sudeera-madushan.github.io/calculator/">
+                            <button class="btn btn-bottom">View More</button>
+                        </a>
                     </div>
                 </div>
                 <div class="card swiper-slide">
@@ -278,7 +282,7 @@
                         <h2 class="name">Assignment 4</h2>
                         <p class="description">The lorem text the section that contains header .</p>
 
-                        <button class="btn">View More</button>
+                        <button class="btn btn-bottom">View More</button>
                     </div>
                 </div>
             </div>
@@ -473,35 +477,35 @@
             },
         },
     });
-    setTimeout(function() {
+    setTimeout(function () {
         $('.pane-2').addClass('pane-display-none')
         $('.pane-1').addClass('pane-display-none')
         // $('.pane-color').addClass('pane-display-none')
     }, 2200);
-    setTimeout(function() {
+    setTimeout(function () {
         $('.pane-color').addClass('pane-display-none')
-    }, 3100);
-    $('#meny-btn').click((event), function (){
+    }, 2900);
+    $('#meny-btn').click((event), function () {
         console.log($('.my-header').css('left'))
-        if ( $('.my-header').css('left')<'0px') {
+        if ($('.my-header').css('left') < '0px') {
             $('.my-header').removeClass('my-header-close');
             $('.my-header').addClass('my-header-open');
-            $('.my-header').css({left:0});
+            $('.my-header').css({left: 0});
         }
-        if( $('.my-header').css('left')==='0px'){
+        if ($('.my-header').css('left') === '0px') {
             $('.my-header').removeClass('my-header-open');
             $('.my-header').addClass('my-header-close');
-            $('.my-header').css({left:'-28rem'});
+            $('.my-header').css({left: '-28rem'});
         }
     });
     $(window).on('resize', function() {
-        let width=$(window).width()
-        if (width>974){
-            $('.my-header').css({left:'0'});
-            $('#meny-btn').css({display:'none'})
-        }else {
-            $('.my-header').css({left:'-28rem'});
-            $('#meny-btn').css({display:'inherit'})
+        let width = $(window).width()
+        if (width > 932) {
+            $('.my-header').css({left: '0'});
+            $('#meny-btn').css({display: 'none'})
+        } else {
+            $('.my-header').css({left: '-28rem'});
+            $('#meny-btn').css({display: 'inherit'})
         }
     });
     function showMenuBtn(){
