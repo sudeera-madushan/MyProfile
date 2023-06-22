@@ -1,0 +1,180 @@
+@media (max-width: 320px) {
+    .my-header {
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .my-header .navbar a {
+        font-size: 2rem;
+    }
+
+    .home-section .home-image {
+        width: 200vw;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-section h1 {
+        width: 37rem;
+    }
+
+    .home-section .home-content {
+        position: absolute;
+        top: 7rem;
+        /* right: 37rem; */
+        /* max-width: 63rem; */
+        z-index: 2;
+        left: -18rem;
+    }
+
+    .home-section h3 {
+        margin-left: 16rem;
+        font-size: 2.2rem;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .about-content h2 {
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+
+    .about {
+        margin-top: 0;
+        padding-top: 46rem;
+    }
+
+    .about-content h3 {
+        font-size: 15px;
+        margin-left: 3rem;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 12px;
+        max-width: 35rem;
+        /*margin-left: 3rem;*/
+        text-align: center;
+        margin: 2rem 30px 3rem;
+    }
+
+    .tab-titles .tab-links {
+        font-size: 14px;
+    }
+
+    .tab-titles .tab-links-margin {
+        margin-right: 22px;
+    }
+
+    .about-content {
+        margin-left: 11px
+    }
+
+    .about-content a {
+        left: 12rem;
+        position: absolute;
+        bottom: -8rem;
+    }
+
+    .tab-titles {
+        margin: -23px -2px -20px 0;
+    }
+
+    .services {
+        margin: 0;
+    }
+
+    .services h2 {
+        margin-left: 5rem;
+        margin-bottom: 3rem;
+        width: 25rem;
+    }
+
+    .service-box p {
+        font-size: 14px;
+    }
+
+    .projects .project-container {
+        display: block;
+    }
+
+    .project-container .project-box {
+        margin: 16px;
+    }
+
+    .card-image {
+        width: 61vw;
+        height: 31vw;
+    }
+
+    .image-content {
+        padding: 14px 0;
+    }
+
+    .name {
+        width: auto;
+    }
+
+    .card-content .btn {
+        font-size: 12px;
+        position: absolute;
+        bottom: 22px;
+    }
+
+    .service-container .swiper-pagination {
+        right: 0;
+        left: 0;
+        margin: auto;
+        bottom: 15px;
+        width: 69px;
+
+    }
+
+    .contact-wrapper {
+        margin-left: 0;
+    }
+
+    .form-group {
+        width: 80vw;
+    }
+
+    .form-control, textarea {
+        margin: initial;
+        width: 80vw;
+    }
+
+    .send-button {
+        width: 80vw;
+    }
+
+    .alt-send-button {
+        margin-top: -3px;
+    }
+
+    .direct-contact-container {
+        margin-top: 18px;
+        max-width: 80vw;
+    }
+
+    .contact-text {
+        font: 300 13px "Lato", sans-serif;
+    }
+
+    .place {
+        margin-left: 15px;
+    }
+
+    .phone {
+        margin-left: 15px;
+    }
+
+    .gmail {
+        margin-left: 10px;
+    }
+}
