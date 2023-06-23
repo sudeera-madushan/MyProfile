@@ -58,9 +58,14 @@ function searchItemMethod(arr,id){
 }
 
 function reloadCartData(){
-    let cart=JSON.parse(localStorage.getItem(cartData));
-    cart.map((object,index) =>{
-        var data = `
+
+    let carts = JSON.parse(localStorage.getItem(cartData));
+
+    if (carts) {
+        $('#tableCustomerBody').empty();
+        carts.map((result, index) => {
+            carts.map((object, index) => {
+                var data = `
                 <tr>
                     <th scope="row">${object._itemCode}</th>
                     <td>${object._name}</td>
@@ -73,8 +78,13 @@ function reloadCartData(){
                         <button class="btn btn-danger" ">Delete</button>
                     </td>
                 </tr>`
-        $('#tableCartBody').append(data);
-    });
+                $('#tableCartBody').append(data);
+            });
+
+        })
+
+    }
+
 }
 
 function addToCartArray(){
@@ -117,11 +127,23 @@ function checkItemRecent(arr,id){
     return -1;
 }
 
-
+function purchaseOrder() {
+    let carts = JSON.parse(localStorage.getItem(cartData));
+    let items = JSON.parse(localStorage.getItem("ITEMS"));
+    for (let i = 0; i < carts.length; i++) {
+        for (let j = 0; j < items.length; j++) {
+            if (items[j]._id === carts[i]._id) {
+                items[j]._qty = parseFloat(items[j]._qty) - parseFloat(carts[i]._qty);
+            }
+        }
+    }
+    localStorage.setItem(items, JSON.stringify("ITEMS"));
+}
 $('#searchCusOrder').click(searchCusOrder);
 $('#searchItemOrder').click(searchItemOrder);
 $('#addToCartBtn').click(addToCartArray);
 $('#btn').click(addToCartArray);
+$('#purchase-order-btn').click(purchaseOrder);
 
 
-reloadCartData();
+reloadCartData;

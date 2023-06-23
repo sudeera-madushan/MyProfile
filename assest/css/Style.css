@@ -156,14 +156,28 @@ body {
 }
 .image-pane{
     position: absolute;
-    width: 52vw;
+    width: 79vw;
     height: 59.2vw;
     z-index: 1;
-    background: rgba(0,0,0,.7);
-    right: 40vw;
+    background: rgba(251, 250, 250, 0.2);
+    right: 0;
     top: 0;
     /* content: ""; */
-    filter: blur(91px);
+    /* filter: blur(91px);
+
+
+
+
+     */
+    /*position: absolute;*/
+    /*width: 52vw;*/
+    /*height: 23.2vw;*/
+    /*z-index: 1;*/
+    /*background: rgba(0,0,0,.7);*/
+    /*right: 40vw;*/
+    /*top: 0;*/
+    /*!* content: ""; *!*/
+    /*filter: blur(91px);*/
 }
 .home-content h1 {
     font-family: "Titillium Web", sans-serif;

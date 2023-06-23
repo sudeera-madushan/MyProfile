@@ -61,7 +61,6 @@ function viewCustomersForm(){
 }
 
 function loadCustomerData(){
-    console.log("run wenoo")
     let pre_data=localStorage.getItem(cusData);
     let customer_data_arr=JSON.parse(pre_data);
 
