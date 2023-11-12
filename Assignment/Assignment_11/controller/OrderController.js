@@ -3,6 +3,36 @@ import {OrderDetail} from "../model/OrderDetail.js";
 const cartData="CART";
 const cusData="DATA";
 const itemData="ITEMS";
+const orders="ORDERS";
+
+$('#customerSearchOrder').on('input', function() {
+    let val = $(this).val();
+    let customers = JSON.parse(localStorage.getItem(cusData));
+    for (let i = 0; i < customers.length; i++) {
+        if (customers[i]._name.toLowerCase().includes(val.toLowerCase())){
+            $('#customerIDOrder').val(customers[i]._id)
+            $('#customerNameOrder').val(customers[i]._name)
+            return;
+        }
+    }
+    $('#customerIDOrder').val("")
+    $('#customerNameOrder').val("")
+})
+$('#itemSearchOrder').on('input', function() {
+    let val = $(this).val();
+    let items = JSON.parse(localStorage.getItem(itemData));
+    for (let i = 0; i < items.length; i++) {
+        if (items[i]._name.toLowerCase().includes(val.toLowerCase())){
+            $('#itemCodeOrder').val(items[i]._id)
+            $('#itemNameOrder').val(items[i]._name)
+            $('#itemQtyOnOrder').val(items[i]._qty)
+            $('#itemPriceOrder').val(items[i]._price)
+            return;
+        }
+    }
+    $('#itemCodeOrder').val("")
+    $('#itemNameOrder').val("")
+})
 function searchCusOrder(){
     let customerId=$('#customerIDOrder').val();
     let customersArr=JSON.parse(localStorage.getItem(cusData));

@@ -1,4 +1,9 @@
 @media (max-width: 519px) {
+
+    .image-pane {
+        width: 100%;
+        height: 123.5vw;
+    }
     .my-header {
         top: 0;
         bottom: 0;

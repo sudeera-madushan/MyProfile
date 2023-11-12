@@ -52,8 +52,8 @@
 <!--Customer Form-->
 <div class="container row popup text-start d-flex" id="newCustomerForm">
     <div class="col-12" style="height: 50px">
-            <label for="customerIDC" class="form-check-label">Customer ID :</label>
-            <input class="form-control form-control-sm" type="text" placeholder="C001" aria-label="customerID" id="customerIDC">
+            <label for="customerIDC" class="form-check-label" >Customer ID :</label>
+            <input class="form-control form-control-sm" type="text" placeholder="C001" aria-label="customerID" id="customerIDC" disabled>
     </div>
     <div class="col-12" style="height: 50px">
             <label for="customerNameC" class="form-check-label">Name :</label>
@@ -83,7 +83,7 @@
 <div class="container row popup text-start d-flex" id="newItemForm">
     <div class="col-12" style="height: 50px">
             <label for="itemCodeI" class="form-check-label">Item Code :</label>
-            <input class="form-control form-control-sm" type="text" placeholder="C001" aria-label="customerID" id="itemCodeI">
+            <input class="form-control form-control-sm" type="text"  aria-label="customerID" id="itemCodeI" disabled>
     </div>
     <div class="col-12" style="height: 50px">
             <label for="itemNameI" class="form-check-label">Name :</label>
@@ -91,11 +91,11 @@
     </div>
     <div class="col-12" style="height: 50px">
             <label for="itemQTYI" class="form-check-label">QTY :</label>
-            <input class="form-control form-control-sm" type="text" placeholder="0" aria-label="address" id="itemQTYI">
+            <input class="form-control form-control-sm" type="number" placeholder="0" aria-label="address" id="itemQTYI">
     </div>
     <div class="col-12" style="height: 50px">
             <label for="itemPriceI" class="form-check-label">Price :</label>
-            <input class="form-control form-control-sm" type="text" placeholder="0.0" aria-label="mobile" id="itemPriceI">
+            <input class="form-control form-control-sm" type="number" placeholder="0.0" aria-label="mobile" id="itemPriceI">
     </div>
     <div class="col-6"></div>
     <div class="col-3 p-4 " style="height: 50px" id="btnSaveNewItem">
@@ -262,42 +262,40 @@
             <hr>
             <div class="row">
                 <div class="col-6">
-                    <label for="customerIDC" class="form-check-label">Order ID :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" aria-label="customerID" >
+                    <label for="orderIdO" class="form-check-label">Order ID :</label>
+                    <input class="form-control form-control-sm" type="text"  aria-label="orderIdO" id="orderIdO" disabled>
                 </div>
                 <div class="col-6">
                     <label for="customerIDC" class="form-check-label">Date :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="date" placeholder="C001" aria-label="customerID" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="customerSearchOrder" class="form-check-label">Search</label>
+                    <input class="form-control form-control-sm" type="text"  id="customerSearchOrder" aria-label="customerSearchOrder" >
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
                     <label for="customerIDC" class="form-check-label">Customer ID :</label>
-                    <input class="form-control form-control-sm" type="text" id="customerIDOrder" placeholder="C001" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text" id="customerIDOrder" aria-label="customerID" >
                 </div>
-                <div class="col-6 p-3">
-                    <button class="btn btn-success" id="searchCusOrder">Search</button>
+                <div class="col-6">
+                    <label for="customerIDC" class="form-check-label">Customer Name :</label>
+                    <input class="form-control form-control-sm" type="text" id="customerNameOrder" placeholder="Search" aria-label="customerID" >
                 </div>
             </div>
             <div class="row">
-
-                <div class="col-6">
-                    <label for="customerIDC" class="form-check-label">Name :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" id="customerNameOrder" aria-label="customerID" >
-                </div>
-                <div class="col-6">
+                <div class="col">
                     <label for="customerIDC" class="form-check-label">Address :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" id="customerAddressOrder" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text"  id="customerAddressOrder" aria-label="customerID" >
                 </div>
             </div>
             <div class="row">
-                <div>
-                    <label for="customerIDC" class="form-check-label">Salary :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" id="customerSalaryOrder" aria-label="customerID" >
-                </div>
                 <div>
                     <label for="customerIDC" class="form-check-label">Mobile :</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="C001" id="customerMobileOrder" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text"  id="customerMobileOrder" aria-label="customerID" >
                 </div>
             </div>
             <br>
@@ -307,28 +305,29 @@
             <hr>
             <div class="row">
                 <div class="col-6">
+                    <label class="form-check-label">Item Search :</label>
+                    <input class="form-control form-control-sm" type="text" id="itemSearchOrder" placeholder="Name" >
+                </div>
+                <div class="col-6">
                     <label for="customerIDC" class="form-check-label">Item Code :</label>
                     <input class="form-control form-control-sm" type="text" id="itemCodeOrder" placeholder="I001" aria-label="customerID" >
-                </div>
-                <div class="col-6 p-3">
-                    <button class="btn btn-success" id="searchItemOrder" >Search</button>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12">
                     <label for="customerIDC" class="form-check-label">Name :</label>
-                    <input class="form-control form-control-sm" type="text" id="itemNameOrder" placeholder="Item" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text" id="itemNameOrder" placeholder="Item" aria-label="customerID" disabled>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6">
                     <label for="customerIDC" class="form-check-label">QTY On Hand :</label>
-                    <input class="form-control form-control-sm" type="text" id="itemQtyOnOrder" placeholder="0" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text" id="itemQtyOnOrder" placeholder="0" aria-label="customerID"  disabled>
                 </div>
                 <div class="col-6">
                     <label for="customerIDC" class="form-check-label">Price :</label>
-                    <input class="form-control form-control-sm" type="text" id="itemPriceOrder" placeholder="0.0" aria-label="customerID" >
+                    <input class="form-control form-control-sm" type="text" id="itemPriceOrder" placeholder="0.0" aria-label="customerID"  disabled>
                 </div>
             </div>
             <div class="row">

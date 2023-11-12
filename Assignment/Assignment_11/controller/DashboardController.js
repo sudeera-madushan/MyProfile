@@ -16,6 +16,14 @@ function viewOrderForm(){
     $('#customerSection').css("display","none")
     $('#itemSection').css("display","none")
     $('#orderSection').css("display","inherit")
+
+    let id="OR-0000";
+    let orders = JSON.parse(localStorage.getItem("ORDERS"));
+    if (orders){
+        let number = orders.length;
+        id = "OR-" + String(number).padStart(4, '0');
+    }
+    $('#orderIdO').val(id);
 }
 
 

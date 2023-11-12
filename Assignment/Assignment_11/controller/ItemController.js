@@ -33,8 +33,19 @@ let loadItemData= function (){
 }
 
 function showNewItem(item){
+    let id="";
+    console.log(item)
     if (!item){
-        item=new Item("","","","");
+        let items = JSON.parse(localStorage.getItem(itemData));
+        if (items){
+            let number = items.length;
+            id = "I" + String(number).padStart(3, '0');
+
+        }else {
+            id="I000";
+        }
+        console.log(item)
+        item=new Item(id,"","","");
     }
         $('#itemCodeI').val(item._id);
         $('#itemNameI').val(item._name);
@@ -214,7 +225,7 @@ $('#itemPriceI').on('keyup',(event) =>{
 //         $('#customerMobileC').css({borderColor : "red"})
 //     }
 // });
-$('#btnNewItem').click(showNewItem);
+$('#btnNewItem').click(function (){showNewItem(null)});
 $('#btnCancelNewItem').click(closeNewItem);
 
 

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 2</title>
+    <style>
+        body{
+            background: #adb5bd;
+        }
+        .main-row-1{
+            position: absolute;
+            width: 90vw;
+            height: 40px;
+            border: 1px solid black;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 30vh;
+        }
+        .main-row-2{
+            position: absolute;
+            width: 90vw;
+            height: 40px;
+            border: 1px solid black;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 40vh;
+            justify-content: center;
+            /*bottom: 0;*/
+        }
+        .main-row-3{
+            position: absolute;
+            width: 90vw;
+            height: 40px;
+            border: 1px solid black;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 50vh;
+            justify-content: right;
+            /*bottom: 0;*/
+        }
+        section{
+            display: flex;
+        }
+        section div{
+            margin: 4px;
+            width: 8vw;
+            height: 30px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<section class="main-row-1">
+    <div id="top-1"  style="background: orange" class="square"></div>
+</section>
+<section class="main-row-2">
+    <div id="left-2" class="square" style="background: green"></div>
+    <div id="left-3" class="square" style="background: blue"></div>
+    <div id="left-4" class="square" style="background: red"></div>
+    <div id="left-5" class="square" style="background: deeppink"></div>
+</section>
+<section class="main-row-3">
+    <div id="bottom-1" class="square" style="background: yellow"></div>
+</section>
+<button id="btn-start">Start</button>
+<button id="btn-stop">Stop</button>
+<script src="../../../lib/jquery-3.6.4.min.js"></script>
+<script>
+    let interval=null;
+    let names=["yellow","deeppink","red","blue","green","orange","yellow","deeppink","red","blue","green","orange","yellow","deeppink"];
+    let square=[$('#top-1'),$('#left-2'),$('#left-3'),$('#left-4'),$('#left-5'),$('#bottom-1')];
+    let i=0;
+    function play(){
+        i++;
+        // console.log(square.length)
+        square[5].css({background: names[i]})
+        square[4].css({background: names[i+1]});
+        square[3].css({background: names[i+2]});
+        square[2].css({background: names[i+3]});
+        square[1].css({background: names[i+4]});
+        square[0].css({background: names[i+5]});
+        if (i===6){
+            i=0;
+        }
+    }
+
+
+
+
+
+    $('#btn-start').on('click',()=> {
+        clearInterval(interval);
+        interval=setInterval(play, 1000);
+    });
+    $('#btn-stop').on('click',()=> {
+        clearInterval(interval);
+        // interval=setInterval(play, 3000);
+    });
+</script>
+</body>
+</html>

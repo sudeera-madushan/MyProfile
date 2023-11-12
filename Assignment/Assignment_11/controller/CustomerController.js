@@ -67,7 +67,6 @@ function loadCustomerData(){
     if (customer_data_arr) {
         $('#tableCustomerBody').empty();
         customer_data_arr.map((result, index) => {
-            console.log(result);
             var data = `
                 <tr>
                     <th scope="row">${result._id}</th>
@@ -102,6 +101,14 @@ function closeNewCustomer(){
 function showNewCustomer(customer) {
     if (!customer){
         customer=new Customer("","","","","");
+        let customers = JSON.parse(localStorage.getItem(cusData));
+        if (customers){
+            let number = customers.length;
+            customer._id = "C" + String(number).padStart(3, '0');
+
+        }else {
+            customer._id="C000";
+        }
     }
         $('#customerIDC').val(customer._id);
         $('#customerNameC').val(customer._name);
