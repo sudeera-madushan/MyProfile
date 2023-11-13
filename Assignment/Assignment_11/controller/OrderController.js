@@ -12,11 +12,15 @@ $('#customerSearchOrder').on('input', function() {
         if (customers[i]._name.toLowerCase().includes(val.toLowerCase())){
             $('#customerIDOrder').val(customers[i]._id)
             $('#customerNameOrder').val(customers[i]._name)
+            $('#customerAddressOrder').val(customers[i]._address)
+            $('#customerMobileOrder').val(customers[i]._mobile)
             return;
         }
     }
     $('#customerIDOrder').val("")
     $('#customerNameOrder').val("")
+    $('#customerAddressOrder').val("")
+    $('#customerMobileOrder').val("")
 })
 $('#itemSearchOrder').on('input', function() {
     let val = $(this).val();
@@ -32,6 +36,8 @@ $('#itemSearchOrder').on('input', function() {
     }
     $('#itemCodeOrder').val("")
     $('#itemNameOrder').val("")
+    $('#itemPriceOrder').val("")
+    $('#itemQtyOnOrder').val("")
 })
 function searchCusOrder(){
     let customerId=$('#customerIDOrder').val();
@@ -90,10 +96,10 @@ function searchItemMethod(arr,id){
 function reloadCartData(){
 
     let carts = JSON.parse(localStorage.getItem(cartData));
-
+    console.log(carts)
     if (carts) {
+
         $('#tableCustomerBody').empty();
-        carts.map((result, index) => {
             carts.map((object, index) => {
                 var data = `
                 <tr>
@@ -108,9 +114,8 @@ function reloadCartData(){
                         <button class="btn btn-danger" ">Delete</button>
                     </td>
                 </tr>`
-                $('#tableCartBody').append(data);
-            });
 
+            $('#tableCartBody').append(data);
         })
 
     }
@@ -120,9 +125,9 @@ function reloadCartData(){
 function addToCartArray(){
     let pre_data = localStorage.getItem(cartData);
     let data_arr=[];
-    if(pre_data) {
-        data_arr = JSON.parse(pre_data);
-    }
+    // if(pre_data) {
+    //     data_arr = JSON.parse(pre_data);
+    // }
     let orderDetail = new OrderDetail($('#itemCodeOrder').val(),
         $('#itemNameOrder').val(),
         $('#itemQuentityOrder').val(),
