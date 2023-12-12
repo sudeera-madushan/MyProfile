@@ -75,7 +75,7 @@ function loadCustomerData(){
                     <td>${result._mobile}</td>
                     <td>${result._salary}</td>
                     <td width="15%">
-                        <button class="btn btn-success" id="btn-edite">Edite</button>
+                        <button class="btn btn-success" id="btn-edit">Edit</button>
                         <button class="btn btn-danger" id="btn-delete">Delete</button>
                     </td>
                 </tr>`
@@ -133,7 +133,7 @@ $('#customer-table').on('click','button',(e) =>{
             customer=value;
         }
     });
-    if (id==="btn-edite"){
+    if (id==="btn-edit"){
         showNewCustomer(customer);
     }else if(id==="btn-delete"){
         deleteCustomer(customer);

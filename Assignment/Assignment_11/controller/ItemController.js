@@ -20,7 +20,7 @@ let loadItemData= function (){
                     <td>${result._qty}</td>
                     <td>${result._price}</td>
                     <td width="15%">
-                        <button class="btn btn-success"  id="btn-edite">Edite</button>
+                        <button class="btn btn-success"  id="btn-edit">Edit</button>
                         <button class="btn btn-danger" id="btn-delete">Delete</button>
                     </td>
                 </tr>`
@@ -119,7 +119,7 @@ $('#item-table').on('click','button',(e) =>{
             item=value;
         }
     });
-    if (id==="btn-edite"){
+    if (id==="btn-edit"){
         showNewItem(item);
     }else if(id==="btn-delete"){
         deleteItem(item);
